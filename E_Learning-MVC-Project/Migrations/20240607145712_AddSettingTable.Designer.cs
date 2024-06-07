@@ -4,6 +4,7 @@ using E_Learning_MVC_Project.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Learning_MVC_Project.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240607145712_AddSettingTable")]
+    partial class AddSettingTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +52,7 @@ namespace E_Learning_MVC_Project.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 6, 7, 19, 38, 58, 795, DateTimeKind.Local).AddTicks(6122),
+                            CreatedDate = new DateTime(2024, 6, 7, 18, 57, 12, 144, DateTimeKind.Local).AddTicks(9173),
                             Key = "Header text",
                             SofDeleted = false,
                             Value = "My_MvcProject"
@@ -58,7 +60,7 @@ namespace E_Learning_MVC_Project.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 6, 7, 19, 38, 58, 795, DateTimeKind.Local).AddTicks(6125),
+                            CreatedDate = new DateTime(2024, 6, 7, 18, 57, 12, 144, DateTimeKind.Local).AddTicks(9182),
                             Key = "Phone",
                             SofDeleted = false,
                             Value = "+994506453635"
@@ -66,18 +68,10 @@ namespace E_Learning_MVC_Project.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 6, 7, 19, 38, 58, 795, DateTimeKind.Local).AddTicks(6128),
+                            CreatedDate = new DateTime(2024, 6, 7, 18, 57, 12, 144, DateTimeKind.Local).AddTicks(9187),
                             Key = "Address",
                             SofDeleted = false,
                             Value = "Hokmeli"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedDate = new DateTime(2024, 6, 7, 19, 38, 58, 795, DateTimeKind.Local).AddTicks(6129),
-                            Key = "Email",
-                            SofDeleted = false,
-                            Value = "zegamda@code.edu.az"
                         });
                 });
 
