@@ -517,6 +517,10 @@
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
+      "Id": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\img\\25f7bdb3-27ec-4dbb-85ab-c71fc6cb1180-about.jpg",
+      "PackagePath": "staticwebassets\\img\\25f7bdb3-27ec-4dbb-85ab-c71fc6cb1180-about.jpg"
+    },
+    {
       "Id": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\img\\about.jpg",
       "PackagePath": "staticwebassets\\img\\about.jpg"
     },

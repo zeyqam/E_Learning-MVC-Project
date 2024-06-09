@@ -1,0 +1,35 @@
+﻿@model IEnumerable<AboutVM>
+
+    <div class="container mt-5">
+    
+
+    <a asp-action="Create" class="btn btn-primary btn-success btn-sm">Create New</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td><img src="~/img/@item.Image" alt="@item.Title" style="width:100px;" /></td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+
+
+

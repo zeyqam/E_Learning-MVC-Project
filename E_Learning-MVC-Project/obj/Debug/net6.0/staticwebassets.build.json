@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PhVZrTbqZsYNjgPui0YfIKEjxavH529LoD5WW6REIao=",
+  "Hash": "IM/iwtlslLLQjM/O9YOpYvBeT67762/oU4+ccGMjw/A=",
   "Source": "E_Learning-MVC-Project",
   "BasePath": "_content/E_Learning-MVC-Project",
   "Mode": "Default",
@@ -2225,6 +2225,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\style.css"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\img\\25f7bdb3-27ec-4dbb-85ab-c71fc6cb1180-about.jpg",
+      "SourceId": "E_Learning-MVC-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\",
+      "BasePath": "_content/E_Learning-MVC-Project",
+      "RelativePath": "img/25f7bdb3-27ec-4dbb-85ab-c71fc6cb1180-about.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\25f7bdb3-27ec-4dbb-85ab-c71fc6cb1180-about.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\img\\about.jpg",
