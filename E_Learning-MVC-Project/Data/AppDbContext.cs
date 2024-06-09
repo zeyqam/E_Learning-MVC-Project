@@ -12,6 +12,17 @@ namespace E_Learning_MVC_Project.Data
         public DbSet<Information> Informations { get; set; }
         public DbSet<About> Abouts { get; set; }
 
+        public DbSet<Social> Socials { get; set; }
+        public DbSet<Instructor> Instructors { get; set; }
+        public DbSet<InstructorSocial> InstructorSocials { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Student> Students { get; set; }
+
+
+
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Slider>().HasQueryFilter(m => !m.SofDeleted);
@@ -58,6 +69,12 @@ namespace E_Learning_MVC_Project.Data
 
 
                );
+
+            
+
+
+
         }
+
     }
 }
