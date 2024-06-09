@@ -1,0 +1,28 @@
+﻿@model SettingEditVM
+
+@{
+    ViewData["Title"] = "Edit Setting";
+}
+
+<h1>Edit Setting</h1>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label asp-for="Value" class="control-label"></label>
+        <input asp-for="Value" class="form-control" />
+        <span asp-validation-for="Value" class="text-danger"></span>
+    </div>
+    <input type="hidden" asp-for="Key" />
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+
+
+

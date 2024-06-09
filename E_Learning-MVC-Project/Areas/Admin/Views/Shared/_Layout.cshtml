@@ -183,23 +183,23 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#archive" aria-expanded="false" aria-controls="archive">
                             <i class="mdi mdi-circle-outline menu-icon"></i>
-                            <span class="menu-title">Archives</span>
+                            <span class="menu-title">Informations</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="archive">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Archive" asp-action="CategoryArchive">categories</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Information" asp-action="Index">Information</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Books</a></li>
                             </ul>
                         </div>
-                    </li>
+                    
                     <div class="collapse" id="ui-basic">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Slider" asp-action="Index">Slider</a></li>
                             <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Slider info</a></li>
                         </ul>
                     </div>
-                    </li>
+                    
 
                     <li class="nav-item">
                         <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">
@@ -208,9 +208,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-area="Admin" asp-controller="Blog" asp-action="Index">
+                        <a class="nav-link" asp-area="Admin" asp-controller="Setting" asp-action="Index">
                             <i class="mdi mdi-chart-pie menu-icon"></i>
-                            <span class="menu-title">Blogs</span>
+                            <span class="menu-title">Setting</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -274,8 +274,8 @@
     <script src="~/admin/js/jquery.dataTables.js"></script>
 
         @RenderSection("js",required:false)
+        @RenderSection("scripts",required:false)
         
     <!-- End custom js for this page-->
 </body>
 
-</html>

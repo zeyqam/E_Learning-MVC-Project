@@ -1,0 +1,30 @@
+﻿@model Dictionary<string, string>
+
+@{
+    ViewData["Title"] = "Settings";
+}
+
+<h1>Settings</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Key</th>
+            <th>Value</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var setting in Model)
+        {
+            <tr>
+                <td>@setting.Key</td>
+                <td>@setting.Value</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Setting", new { id = setting.Key, area = "Admin" })" class="btn btn-primary">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

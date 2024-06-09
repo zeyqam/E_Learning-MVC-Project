@@ -12,6 +12,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 builder.Services.AddScoped<ISliderService, SliderService>();
 builder.Services.AddScoped<ISettingService, SettingService>();
+builder.Services.AddScoped<IInformationService, InformationService>();
 
 var app = builder.Build();
 

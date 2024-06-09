@@ -9,6 +9,7 @@ namespace E_Learning_MVC_Project.Data
 
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Setting> Settings { get; set; }
+        public DbSet<Information> Informations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
