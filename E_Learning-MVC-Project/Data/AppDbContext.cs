@@ -1,9 +1,10 @@
 ﻿using E_Learning_MVC_Project.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace E_Learning_MVC_Project.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<AppUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -28,6 +29,8 @@ namespace E_Learning_MVC_Project.Data
         {
             modelBuilder.Entity<Slider>().HasQueryFilter(m => !m.SofDeleted);
             modelBuilder.Entity<Social>().HasQueryFilter(m => !m.SofDeleted);
+            modelBuilder.Entity<Category>().HasQueryFilter(m => !m.SofDeleted);
+
 
 
 
@@ -72,6 +75,7 @@ namespace E_Learning_MVC_Project.Data
 
 
                );
+            base.OnModelCreating( modelBuilder );
 
             
 

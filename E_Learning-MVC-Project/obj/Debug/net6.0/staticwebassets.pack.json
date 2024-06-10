@@ -517,10 +517,6 @@
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\img\\42d7a280-fc3c-411d-bc87-c23c97f947ef-testimonial-2.jpg",
-      "PackagePath": "staticwebassets\\img\\42d7a280-fc3c-411d-bc87-c23c97f947ef-testimonial-2.jpg"
-    },
-    {
       "Id": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\img\\about.jpg",
       "PackagePath": "staticwebassets\\img\\about.jpg"
     },
@@ -571,6 +567,10 @@
     {
       "Id": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\img\\f603f292-886c-4819-881d-6523e158d4da-carousel-2.jpg",
       "PackagePath": "staticwebassets\\img\\f603f292-886c-4819-881d-6523e158d4da-carousel-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\img\\ff304b21-fb77-42f1-accb-a78b54bd4d19-testimonial-1.jpg",
+      "PackagePath": "staticwebassets\\img\\ff304b21-fb77-42f1-accb-a78b54bd4d19-testimonial-1.jpg"
     },
     {
       "Id": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\img\\team-1.jpg",

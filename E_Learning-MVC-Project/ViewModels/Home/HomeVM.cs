@@ -9,5 +9,7 @@ namespace E_Learning_MVC_Project.ViewModels.Home
         public IEnumerable<InformationVM> Informations { get; set; }
         public IEnumerable<AboutVM> Abouts { get; set; }
         public List<TestimonialVM> Testimonials { get; set; }
+        public string UserFullName { get; set; }
+        public bool IsAuthenticated { get; set; }
     }
 }

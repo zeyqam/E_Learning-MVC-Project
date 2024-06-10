@@ -42,12 +42,52 @@
                     <a href="404.html" class="dropdown-item">404 Page</a>
                 </div>
             </div>
+            <div class="nav-item dropdown">
+                <a href="#"
+                   class="nav-link dropdown-toggle"
+                   data-bs-toggle="dropdown">Account</a>
+                   @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="dropdown-menu fade-down m-0">
+                        <a class="dropdown-item" href="#">Hello, @Model.UserFullName</a>
+                        <form method="post" asp-controller="Account" asp-action="Logout" class="d-inline">
+                            <button type="submit" class="dropdown-item">Logout</button>
+                        </form>
+                        
+                    </div>
+                }
+                else
+                {
+                    <a asp-controller="Account" asp-action="SignIn" class="dropdown-item">Login</a>
+                    <a asp-controller="Account" asp-action="SignUp" class="dropdown-item">Register</a>
+                }
+
+            </div>
+
+
             <a href="contact.html" class="nav-item nav-link">Contact</a>
         </div>
-        <div class="navbar-nav p-4 p-lg-0">
-            <a href="register.html" class="nav-item nav-link">Register</a>
-            <a href="login.html" class="nav-item nav-link">Login</a>
-        </div>
+        @*<div class="navbar-nav p-4 p-lg-0">
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="drop_down_menu position-absolute">
+                    <a class="nav-item nav-link" href="#">Hello, @Model.UserFullName</a>
+                    <form method="post" asp-controller="Account" asp-action="Logout" class="d-inline">
+                        <button type="submit" class="nav-item nav-link btn btn-link p-0 m-0">Logout</button>
+                    </form>
+                    @if (User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
+                    {
+                        <a class="nav-item nav-link" asp-area="Admin" asp-controller="dashboard" asp-action="Index">Go to Admin</a>
+                    }
+                </div>
+            }
+            else
+            {
+                <a asp-controller="Account" asp-action="SignIn" class="nav-item nav-link">Login</a>
+                <a asp-controller="Account" asp-action="SignUp" class="nav-item nav-link">Register</a>
+            }
+        </div>*@
     </div>
 </nav>
 <!-- Navbar End -->
