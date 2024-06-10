@@ -18,6 +18,7 @@ namespace E_Learning_MVC_Project.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Student> Students { get; set; }
+        public DbSet<Testimonial> Testimonials { get; set; }
 
 
 
@@ -26,6 +27,8 @@ namespace E_Learning_MVC_Project.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Slider>().HasQueryFilter(m => !m.SofDeleted);
+            modelBuilder.Entity<Social>().HasQueryFilter(m => !m.SofDeleted);
+
 
 
             modelBuilder.Entity<Setting>().HasData

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IM/iwtlslLLQjM/O9YOpYvBeT67762/oU4+ccGMjw/A=",
+  "Hash": "l+AE9A362gNUktZVrUbxuZtvaMX59SBbvALJW+rk16g=",
   "Source": "E_Learning-MVC-Project",
   "BasePath": "_content/E_Learning-MVC-Project",
   "Mode": "Default",
@@ -2227,12 +2227,12 @@
       "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
-      "Identity": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\img\\25f7bdb3-27ec-4dbb-85ab-c71fc6cb1180-about.jpg",
+      "Identity": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\img\\42d7a280-fc3c-411d-bc87-c23c97f947ef-testimonial-2.jpg",
       "SourceId": "E_Learning-MVC-Project",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\",
       "BasePath": "_content/E_Learning-MVC-Project",
-      "RelativePath": "img/25f7bdb3-27ec-4dbb-85ab-c71fc6cb1180-about.jpg",
+      "RelativePath": "img/42d7a280-fc3c-411d-bc87-c23c97f947ef-testimonial-2.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2241,7 +2241,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\25f7bdb3-27ec-4dbb-85ab-c71fc6cb1180-about.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\42d7a280-fc3c-411d-bc87-c23c97f947ef-testimonial-2.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\img\\about.jpg",
@@ -2429,6 +2429,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\course-3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\img\\d905e49e-f33f-48b6-828d-67f1bfe2d010-about.jpg",
+      "SourceId": "E_Learning-MVC-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\",
+      "BasePath": "_content/E_Learning-MVC-Project",
+      "RelativePath": "img/d905e49e-f33f-48b6-828d-67f1bfe2d010-about.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\d905e49e-f33f-48b6-828d-67f1bfe2d010-about.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\wwwroot\\img\\f603f292-886c-4819-881d-6523e158d4da-carousel-2.jpg",

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "K4v8y9hJnQf8Z/Sa5cANcNLCalmxEr4ksYshBzTh0umo2tTF2txtgy6GG3QtxNfuRdIlLMPpyvsJfxjaRTmC3Q==",
+  "dgSpecHash": "3FyRdkNyHEZO9N010s5e5L6WZdD/8Zb9+6cIq3+LBLrMOTxpLA92MItJkGQaI1I5DPiUEGTOOy0yMWaLAvWZhQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\Desktop\\E_Learning-MVC-Project\\E_Learning-MVC-Project\\E_Learning-MVC-Project.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

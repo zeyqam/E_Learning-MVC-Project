@@ -1,6 +1,7 @@
 using E_Learning_MVC_Project.Data;
 using E_Learning_MVC_Project.Services;
 using E_Learning_MVC_Project.Services.Interface;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,9 @@ builder.Services.AddScoped<ISliderService, SliderService>();
 builder.Services.AddScoped<ISettingService, SettingService>();
 builder.Services.AddScoped<IInformationService, InformationService>();
 builder.Services.AddScoped<IAboutService, AboutService>();
+builder.Services.AddScoped<ISocialService,SocialService>();
+builder.Services.AddScoped<ITestimonialService, TestimonialService>();
+
 
 var app = builder.Build();
 
