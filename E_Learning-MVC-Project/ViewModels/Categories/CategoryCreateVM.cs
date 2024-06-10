@@ -9,7 +9,7 @@ namespace E_Learning_MVC_Project.ViewModels.Categories
         public string Name { get; set; }
         [Required]
         
-        public IFormFile ImageFile { get; set; }
+        public IFormFile Image { get; set; }
 
     }
 }

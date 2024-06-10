@@ -31,6 +31,7 @@ builder.Services.AddScoped<IInformationService, InformationService>();
 builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<ISocialService,SocialService>();
 builder.Services.AddScoped<ITestimonialService, TestimonialService>();
+builder.Services.AddScoped<IInstructorService, InstructorService>();
 
 
 var app = builder.Build();

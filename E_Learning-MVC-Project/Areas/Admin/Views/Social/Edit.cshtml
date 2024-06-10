@@ -1,0 +1,29 @@
+﻿@model SocialVM
+
+<h2>Edit Social</h2>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Url"></label>
+        <input asp-for="Url" class="form-control" />
+        <span asp-validation-for="Url" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="InstructorIds">Instructors</label>
+        <select asp-for="InstructorIds" class="form-control" multiple>
+            @foreach (var instructor in Model.Instructors)
+            {
+                <option value="@instructor.Value" selected="@Model.InstructorIds.Contains(int.Parse(instructor.Value))">@instructor.Text</option>
+            }
+        </select>
+        <span asp-validation-for="InstructorIds" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+

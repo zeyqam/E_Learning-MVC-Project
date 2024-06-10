@@ -15,19 +15,19 @@ namespace E_Learning_MVC_Project.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<Social>> GetAllAsync()
+        public async Task<IEnumerable<InstructorSocial>> GetAllAsync()
         {
-            return await _context.Socials.Where(m => !m.SofDeleted).ToListAsync();
+            return await _context.InstructorSocials.Include(m => m.Instructor).ToListAsync();
         }
 
         public async Task<Social> GetByIdAsync(int id)
         {
-            return await _context.Socials.FindAsync(id);
+            return await _context.Socials.Include(s => s.InstructorSocials).ThenInclude(m => m.Instructor).FirstOrDefaultAsync(m => m.Id == id);
         }
 
         public async Task CreateAsync(Social social)
         {
-            await _context.Socials.AddAsync(social);
+            _context.Socials.Add(social);
             await _context.SaveChangesAsync();
         }
 
@@ -39,28 +39,12 @@ namespace E_Learning_MVC_Project.Services
 
         public async Task DeleteAsync(int id)
         {
-            var social = await _context.Socials.FindAsync(id);
-            if (social != null)
-            {
-                social.SofDeleted = true;
-                await _context.SaveChangesAsync();
-            }
-
+            var social = await GetByIdAsync(id);
+            _context.Socials.Remove(social);
+            await _context.SaveChangesAsync();
         }
 
-        public IEnumerable<SocialVM> GetMappeDatas(IEnumerable<Social> socials)
-        {
-            return socials.Select(m => new SocialVM
-            {
-                Id = m.Id,
-                Name = m.Name,
-                Url = m.Url
-                
-                
-
-
-            });
-        }
-
+        
     }
+
 }
