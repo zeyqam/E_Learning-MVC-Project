@@ -22,12 +22,13 @@ namespace E_Learning_MVC_Project.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly IInstructorService _instructorService;
         private readonly ISocialService _socialService;
+        private readonly ICategoryService _categoryService;
         public HomeController(IInformationService informationService, 
                               IAboutService aboutService,
                               ITestimonialService testimonialService,
                               UserManager<AppUser> userManager,
                               IInstructorService instructorService,
-                              ISocialService socialService)
+                              ISocialService socialService,ICategoryService categoryService)
         {
             _informationService = informationService;
             _aboutService = aboutService;
@@ -35,6 +36,7 @@ namespace E_Learning_MVC_Project.Controllers
             _userManager = userManager;
             _instructorService = instructorService;
             _socialService = socialService;
+            _categoryService = categoryService;
         }
 
         public async Task< IActionResult> Index()
@@ -74,7 +76,9 @@ namespace E_Learning_MVC_Project.Controllers
                 Abouts = await _aboutService.GetAllAsync(),
                 Testimonials = (List<ViewModels.Testimonial.TestimonialVM>)await _testimonialService.GetAllAsync(),
                 Instructors = instructorVMs,
-                Socials = instructorSocialVMs
+                Socials = instructorSocialVMs,
+                Categories=await _categoryService.GetAllAsync()
+                
             };
             if (User.Identity.IsAuthenticated)
             {

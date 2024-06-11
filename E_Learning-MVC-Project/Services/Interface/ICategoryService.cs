@@ -8,7 +8,7 @@ namespace E_Learning_MVC_Project.Services.Interface
         Task<IEnumerable<CategoryVM>> GetAllAsync();
         Task<CategoryVM> GetByIdAsync(int id);
         Task CreateAsync(CategoryCreateVM categoryCreateVM);
-        Task UpdateAsync(int id, CategoryEditVM categoryEditVM);
+        Task EditAsync(int id, CategoryEditVM categoryEditVM);
         Task DeleteAsync(int id);
 
     }

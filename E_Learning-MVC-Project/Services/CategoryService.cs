@@ -1,4 +1,5 @@
 ﻿using E_Learning_MVC_Project.Data;
+using E_Learning_MVC_Project.Helpers.Extensions;
 using E_Learning_MVC_Project.Models;
 using E_Learning_MVC_Project.Services.Interface;
 using E_Learning_MVC_Project.ViewModels.Categories;
@@ -9,10 +10,11 @@ namespace E_Learning_MVC_Project.Services
     public class CategoryService:ICategoryService
     {
         private readonly AppDbContext _context;
-
-        public CategoryService(AppDbContext context)
+        private readonly IWebHostEnvironment _env;
+        public CategoryService(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
 
         public async Task<IEnumerable<CategoryVM>> GetAllAsync()
@@ -45,59 +47,80 @@ namespace E_Learning_MVC_Project.Services
             return category;
         }
 
-        public async Task CreateAsync(CategoryCreateVM categoryCreateVM)
+        public async Task CreateAsync(CategoryCreateVM request)
         {
+            if (!request.Image.CheckFileType("image/"))
+            {
+                throw new Exception("Sadece resim formatı kabul edilir");
+            }
+
+            if (!request.Image.CheckFileSize(200))
+            {
+                throw new Exception("Resim boyutu en fazla 200kb olmalıdır");
+            }
+
+            var fileName = Guid.NewGuid().ToString() + "-" + request.Image.FileName;
+            var filePath = _env.GenerateFilePath("img", fileName);
+            await request.Image.SaveFileLocalAsync(filePath);
+
             var category = new Category
             {
-                Name = categoryCreateVM.Name,
-                ImageUrl = SaveImage(categoryCreateVM.Image)
+                Name = request.Name,
+                ImageUrl = fileName
             };
 
             await _context.Categories.AddAsync(category);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(int id, CategoryEditVM categoryEditVM)
-        {
-            var category = await _context.Categories.FindAsync(id);
-            if (category != null)
-            {
-                category.Name = categoryEditVM.Name;
-                if (categoryEditVM.NewImage!= null)
-                {
-                    category.ImageUrl = SaveImage(categoryEditVM.NewImage);
-                }
-
-                _context.Categories.Update(category);
-                await _context.SaveChangesAsync();
-            }
-        }
-
         public async Task DeleteAsync(int id)
         {
             var category = await _context.Categories.FindAsync(id);
-            if (category != null)
+            if (category == null)
             {
-                category.SofDeleted = true;
-                _context.Categories.Update(category);
-                await _context.SaveChangesAsync();
+                throw new Exception("Kategori bulunamadı");
             }
+
+            var imagePath = _env.GenerateFilePath("img", category.ImageUrl);
+            imagePath.DeleteFileFromLocal();
+
+            _context.Categories.Remove(category);
+            await _context.SaveChangesAsync();
         }
 
-        private string SaveImage(IFormFile image)
+        public async Task EditAsync(int id, CategoryEditVM request)
         {
-            if (image == null)
-                return null;
-
-            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img");
-            var uniqueFileName = Guid.NewGuid().ToString() + "_" + image.FileName;
-            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            var category = await _context.Categories.FindAsync(id);
+            if (category == null)
             {
-                image.CopyTo(fileStream);
+                throw new Exception("Kategori bulunamadı");
             }
 
-            return uniqueFileName;
+            if (request.NewImage != null)
+            {
+                if (!request.NewImage.CheckFileType("image/"))
+                {
+                    throw new Exception("Sadece resim formatı kabul edilir");
+                }
+
+                if (!request.NewImage.CheckFileSize(200))
+                {
+                    throw new Exception("Resim boyutu en fazla 200kb olmalıdır");
+                }
+
+                var oldImagePath = _env.GenerateFilePath("img", category.ImageUrl);
+                oldImagePath.DeleteFileFromLocal();
+
+                var newFileName = Guid.NewGuid().ToString() + "-" + request.NewImage.FileName;
+                var newFilePath = _env.GenerateFilePath("img", newFileName);
+                await request.NewImage.SaveFileLocalAsync(newFilePath);
+
+                category.ImageUrl = newFileName;
+            }
+
+            category.Name = request.Name;
+            await _context.SaveChangesAsync();
         }
+
     }
 }
